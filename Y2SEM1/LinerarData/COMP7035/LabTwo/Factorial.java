@@ -5,8 +5,8 @@ public class Factorial {
 
         int result = 1; //Initialize result to 1 (since factorial starts from 1)
 
-        // Task2 Loop from 2 to n and multiply each number with result
-        for (int factor =2; factor <= n; factor++){
+        // Task2 Loop from 1 to n and multiply each number with result
+        for (int factor =1; factor <= n; factor++){
 
             result *= factor; // multiply result bu current factor. 
 
