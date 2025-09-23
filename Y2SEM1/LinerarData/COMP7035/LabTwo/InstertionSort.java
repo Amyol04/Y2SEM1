@@ -21,23 +21,22 @@ public class InsertionSort {
 
     public void sort() {
         // task 3
-        int n = A.length;
+        int n = A.length; // how many numbers in the list
 
-        for (int i = 1; i< n; ++i){
-            int key = A[i];
-            int j = i -1;
+        for (int j = 1; j< n; j++){
+            int key = A[j];
+            int i = j -1;
             //Move elements of A[0..i-1], that are
             //greater than key, to one position ahead
             // of their current position
 
-            while (n >0 && A[j] > key){
-                A[n +1] = A[j];
-                n = n -1;
+            while (i >= 0 && A[i] > key){
+                A[i +1] = A[i];
+                i = i -1;
 
             }
-            A[n+1]= key;
+            A[i+1]= key;
         }
-        throw new RuntimeException("Not yet implemented!!!");
     }
 
     public static void main(String[] args) {
