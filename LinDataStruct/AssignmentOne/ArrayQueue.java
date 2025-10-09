@@ -3,29 +3,58 @@ package Assignment1;
 public class ArrayQueue implements Queue<Object> {
     private Object[] Q;
 
+    private int tail;
+    private int head;
+    private int size;
+
     public ArrayQueue(int capacity) {
         // TASK 3.A.a
-        throw new RuntimeException("Not implemented yet!");
+        this.capacity = capacity;
+        Q = new int[capacity];
+        size = 0;
     }
 
     public void enqueue(Object x) {
         // TASK 3.A.b
-        throw new RuntimeException("Not implemented yet!");
+        if(isFull()){
+            System.out.println("Queue is full!");
+            head = 0;
+            tail = 0;
+        }
+        Q[tail] = x;
+        size++;
     }
 
     public Object dequeue() {
         // TASK 3.A.c
-        throw new RuntimeException("Not implemented yet!");
+         if(size == 0){
+            System.out.println("Queue is empty");
+        }
+
+        for(int i = 1; i < size; i++){
+            Q[i -1] = Q[i];
+            if (head == n) {
+            head = -1;
+        } else {
+            head++;
+        }
+     }
+        return x;
     }
 
     public Object next() {
         // TASK 3.A.d
-        throw new RuntimeException("Not implemented yet!");
+        if(size ==0){
+            system.out.println("Queue is empty");
+        }
+        else{
+            return head;
+        }
     }
 
     public boolean empty() {
         // TASK 3.A.e
-        throw new RuntimeException("Not implemented yet!");
+         return size == 0;
     }
 
     public static void main(String[] args) {
@@ -51,3 +80,4 @@ public class ArrayQueue implements Queue<Object> {
         System.out.println();
     }
 }
+
