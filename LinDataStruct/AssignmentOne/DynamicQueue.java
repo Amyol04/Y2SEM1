@@ -5,22 +5,30 @@ public class DynamicQueue implements Queue<Object> {
 
     public void enqueue(Object x) {
         // TASK 3.B.a
-        throw new RuntimeException("Not implemented yet!");
+       return Q.prepend;
     }
 
     public Object dequeue() {
         // TASK 3.B.b
-        throw new RuntimeException("Not implemented yet!");
+    if(Q.empty()){
+        System.out.println("Queue is empty :( )");
+        return -1;
+    }
+    else{
+        Object n = Q.getFirst();
+        Q.deleteFirst();
+    }
+    return x;
     }
 
     public Object next() {
         // TASK 3.B.c
-        throw new RuntimeException("Not implemented yet!");
+        return Q.getlast;
     }
 
     public boolean empty() {
         // TASK 3.B.d
-        throw new RuntimeException("Not implemented yet!");
+        return Q.empty;
     }
 
     public static void main(String[] args) {
@@ -46,3 +54,5 @@ public class DynamicQueue implements Queue<Object> {
         System.out.println();
     }
 }
+
+
