@@ -9,17 +9,9 @@ public class DynamicStack implements Stack<Object> {
     }
 
     public Object pop() {
-        // TASK 2.B.b
-
-    if (S.empty()){
-        System.out.println("Stack Underflow");
-
-     } else{
-        S.deleteLast();
-        return S.getFirst();
-
-     }
-    return -1;
+    Object obj = S.getFirst();
+    S.deleteFirst();
+    return obj;
 }
 
     public Object peek() {
@@ -58,3 +50,4 @@ public class DynamicStack implements Stack<Object> {
         System.out.println();
     }
 }
+
