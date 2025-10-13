@@ -11,7 +11,7 @@ public class ArrayStack implements Stack<Object> {
 
         this.capacity = capacity;
         this.S = new Object[capacity];
-        this.top = 0;
+        this.top = -1;
     }
 
     public void push(Object x) {
@@ -21,17 +21,17 @@ public class ArrayStack implements Stack<Object> {
             System.out.println("Stack Overflow");
             return;
         }
-
-        S[++top] = x;
+        S[top++] = x;
     }
 
     public Object pop() {
         // TASK 2.A.c
         if (top == -1){
-            System.out.println("Stack Underflow");
-            return -1;
+            return null;
+        } else{
+        top --;
+        return S[top--];
         }
-        return S[top++];
     }
 
     public Object peek() {
