@@ -6,8 +6,6 @@ public class DoubleLinkedList implements List<Object> {
             key = x;
         }
         public Object key;
-        public ListNode prev = null;
-        public ListNode next = null;
     }
 
     private ListNode head;
@@ -18,7 +16,6 @@ public class DoubleLinkedList implements List<Object> {
         // TASK 1.A
        this.head = null;
        this.tail = null;
-       
     }
 
     public void prepend(Object x) {
@@ -30,7 +27,6 @@ public class DoubleLinkedList implements List<Object> {
         head = tail = newNode;
         }
         else { 
-            newNode.prev = null;
             newNode.next = head;
             head.prev = newNode;
             head = newNode;
@@ -55,13 +51,12 @@ public class DoubleLinkedList implements List<Object> {
         System.out.println("list is empty");
         return;
     } 
-
     if(head == tail) {
         head = tail = null;
     }
     else {
-        head.next.prev = null;
         head = head.next;
+        head.prev = null;
     }
 }
 public void append(Object x) {
@@ -75,7 +70,6 @@ public void append(Object x) {
         tail = newNode;
     }
 }
-
     public Object getLast() {
         // TASK 1.F
         if (tail == null){
@@ -96,20 +90,13 @@ public void append(Object x) {
         tail = head = null;
     }
     else {
-        tail = tail.prev;
-        
+        tail.next = null;
     }
 }
 
     public boolean empty() {
         // TASK 1.H
-    if (head == null){
-        return true;
-    }
-    else{
-        return false;
-    }
-
+    return head == null;
     }
 
     public static void main(String[] args) {
