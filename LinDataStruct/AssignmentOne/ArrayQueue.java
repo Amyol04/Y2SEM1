@@ -9,46 +9,42 @@ public class ArrayQueue implements Queue<Object> {
 
     public ArrayQueue(int capacity) {
         // TASK 3.A.a
-        this.capacity = capacity;
-        Q = new int[capacity];
+        this.Q = new Object[capacity];
+        head =0;
+        tail = 0;
         size = 0;
     }
 
     public void enqueue(Object x) {
         // TASK 3.A.b
         if(isFull()){
-            System.out.println("Queue is full!");
-            head = 0;
-            tail = 0;
+            System.out.println("Queue is full");
+            return;
         }
-        Q[tail] = x;
+        Q[head] = x;
+        head = (head + 1) % Q.length;
         size++;
     }
 
     public Object dequeue() {
         // TASK 3.A.c
-         if(size == 0){
+          if(empty()){
             System.out.println("Queue is empty");
         }
 
-        for(int i = 1; i < size; i++){
-            Q[i -1] = Q[i];
-            if (head == n) {
-            head = -1;
-        } else {
-            head++;
-        }
-     }
+        Object x = Q[tail];
+        tail = (tail + 1) % Q.length;
+        size--;
         return x;
     }
 
     public Object next() {
         // TASK 3.A.d
-        if(size ==0){
+        if(empty()){
             system.out.println("Queue is empty");
-        }
+        } 
         else{
-            return head;
+            return Q[tail];
         }
     }
 
@@ -80,4 +76,5 @@ public class ArrayQueue implements Queue<Object> {
         System.out.println();
     }
 }
+
 
