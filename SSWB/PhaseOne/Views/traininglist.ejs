@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+</head>
+<body>
+    <h1><%= title %></h1>
+
+    <% if (traininglist.length === 0) { %>
+        <p>No bookings found.</p>
+    <% } else { %>
+        <ul>
+        <% traininglist.forEach(function(training) { %>
+            <p><strong>Name:</strong> <%= training.name %></p>
+                <p><strong>Identification:</strong> <%= training.identification %></p>
+                <p><strong>Date:</strong> <%= new Date(training.date).toDateString() %></p>
+                <p><strong>Time:</strong> <%= training.time %></p>
+                <p><strong>Card Number:</strong> <%= training.card_no %></p>
+                <p><strong>Expiration Date:</strong> <%= training.card_date %></p>
+                <p><strong>CVV:</strong> <%= training.cvv %></p>
+                <p><strong>Created At:</strong> <%= training.createdAt ? new Date(training.createdAt).toLocaleString() : 'N/A' %></p>
+        <% }) %>
+        </ul>
+    <% } %>
+
+    <a href="/trainings/create">Add New Booking</a>
+</body>
+</html>

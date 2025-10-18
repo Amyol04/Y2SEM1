@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <nav>
+        <%- include('partials/head') %>
+    </nav>
+    <head>
+        <link rel="stylesheet" href="./StyleSheets/About.css">
+    </head>
+<body>
+    <div class="wrapper">
+    <h1><%= title %></h1>
+    <head>
+        <link rel="stylesheet" href="./StyleSheets/About.css">
+    </head>
+
+    <h1> Need any help? Feel Free to contact us using the form below </h1>
+    <p>We check our responses regulary! Be on the lookout for an email back</p>
+
+    <br> <br>
+    <!-- simple box for an input form, It does not link anywhere. just for decoration -->
+        <div class="container">  
+
+            <label for="fname">Full Name</label> <br>
+            <input type="text" id="fname" name="firstname" placeholder="Your full name..">
+        <br>
+        <br>
+            <label for="lname">Email</label> <br> 
+            <input type="text" id="lname" name="lastname" placeholder="Your email..">
+        <br>
+        <br>
+            <label for="subject">Subject</label> <br>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        <br>
+        <br>
+            <input type="submit" value="Submit">
+
+        </div>
+        </div>
+    </div>
+<%- include('partials/foot') %>
