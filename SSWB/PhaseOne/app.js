@@ -1,13 +1,14 @@
-var createError = require('http-errors');
+var createError = require('http-errors');// used to create errors ! 
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mongoose = require('mongoose'); // ORM for MongoDB
+var mongoose = require('mongoose'); // for database for MongoDB
 
 // Import routes
 var indexRouter = require('./routes/index');
 const trainingRouter = require('./routes/trainingRouter');
+const { title } = require('process');
 
 var app = express();
 
@@ -62,3 +63,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
