@@ -17,7 +17,6 @@ const trainingSchema = new Schema({
     date: {
         type: Date,
         required: true,
-        default: Date.now
     },
     time: {
         type: String,
@@ -26,8 +25,6 @@ const trainingSchema = new Schema({
     card_no: {
         type: String,
         required: true,
-        minlength: 12,
-        maxlength: 19
     },
     card_date: {
         type: String,
@@ -36,8 +33,6 @@ const trainingSchema = new Schema({
     cvv: {
         type: String,
         required: true,
-        minlength: 3,
-        maxlength: 4
     },
 
 }, {
