@@ -5,26 +5,28 @@ public class QuickSort {
     private static int partition(int[] A, int p, int r)
     {
         // TASK 2.B.a
-        x = A[r];
+        int pivott = A[p];
+        int i = p - 1;
+        int j = r + 1;
 
-        i = p -1;
+        while(true){
+            do{
+                j--;
+            }while (A[j] < x);
+            do{
+                i++;
 
-        for(int j = p; j <= r-1; j++){
-            if (A[j] <= x){
-            i++;
+        } while (A[i] < x);
 
-            int temp = A[i];
+        if (  i < j ){
+            int temp = A[i +1];
+            A[i] = A[j];
+            A[j] = temp;
 
-            A[i +1 ] = A[r];
-            A[r] = temp;
-          }
-        }
-
-        int temp = A[i +1];
-        A[i+1] = A[r];
-        A[r] = temp;
-
-        return i + 1;
+        } else { 
+            return j;
+       }
+      }
     }
 
     private static void quicksort(int[] A, int p, int r)
