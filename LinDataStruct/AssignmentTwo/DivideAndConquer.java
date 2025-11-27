@@ -40,10 +40,10 @@ public class DivideAndConquer {
             return;
         }
         
-        hanoi(n - 1 , A, B, C);
+        hanoi(n - 1 , A, C, B);
         System.out.print("move disk"+ n + " from rod " + A + " to rod " + B );
 
-        hanoi(n - 1, A, B, C);
+        hanoi(n - 1, C, B, A);
     }
 
     public static void main(String[] args) {
