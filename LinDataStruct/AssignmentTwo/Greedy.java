@@ -30,12 +30,12 @@ public class Greedy {
     public static LinkedList<Integer> makeChange(int amount, int[] denominations) {
         // TASK 1.B.b
         LinkedList<Integer> makeChange = new LinkedList<>();
-        int numChange;
 
-        for(int id = 0; id < denominations.lenght; id++){
-            num = denominations[id];
+        for(int id = 0; id < denominations.length; id++){
+           int demon = denominations[id];
 
-            amount-=numChange;
+            int numChange = amount / demon;
+            amount = amount % demon;
             makeChange.add(numChange);
         }
         return makeChange;
@@ -60,3 +60,4 @@ public class Greedy {
         makeChange(1234, new int[] { 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1 }).forEach(i -> System.out.println(i));
     }
 }
+
